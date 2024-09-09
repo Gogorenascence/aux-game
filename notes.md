@@ -26,7 +26,7 @@ Time moves forward by 1 min after the second mixers turn
 Win condition - HP reduced to zero
 Track
     cards played by mixers
-    Melody
+    Melody (intros, Main, breakdowns, Outros)
     Harmony
     card effects resolve in order of timestamps
 
@@ -35,11 +35,13 @@ EP LP format
 <!-- What limits card playing? -->
 Tempo/Momentum (Cost)
 <!--  -->
-Tempo
-    Tempo cost increases if playing a different mood from lastest card timewise
-        or if not matched by the harmony
-    Same genre/artist reduces tempo cost by 1 for each
 
+Tempo cost reductions
+    if new card matches:
+        lastest card's genre
+        lastest card's artist
+        lastest card's mood
+        current the harmony
 
 
 Moods
@@ -70,12 +72,14 @@ Cards
     Song
     Card types
         Melodies
-            Intros - Gains effect if very first card
-            Build-ups - Gains effect if played after an intro
-            Breakdowns - Gains effect if played after a build-up
-            Closers - Gains effect if very last card
-        Harmonies
-            have a duration
+            Intros
+            Main
+            Breakdowns
+            Outros
+
+        Harmonies - have a duration (not active until the time enters its duration)
+            single - one at a time
+            double - two at a time
     Effect
 
 Set details
@@ -111,14 +115,21 @@ Effect bank:
         opp's latest card
     rewinds time
     speeds up time
-    jump (forward and back for player only)
+    <!-- jump (forward and back for player only) -->
+    skip
     damage boost
     damage reduction
     effects in tempo
     resolves effect regardless of time
-    trigger speed effects
     pushes card into tempo
     returns cards in track
         to hand
         to deck
     cost: discard a card in tempo
+
+    Trigger effects
+    Continuous effects
+    Card type bonuses:
+        Intros - Gains effect no main/breakdown/outro comes before its timestamp
+        Main - Gains effect no breakdown/outro comes before its timestamp
+        Breakdowns - Gains effect no outro come before its timestamp
